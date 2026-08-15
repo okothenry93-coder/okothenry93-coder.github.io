@@ -126,7 +126,9 @@
     border: 4px solid orange;
 }
 </style>
-    </style>
+  
+</a>
+</a>
 </head>
 </div><div class="profile-icon">
   <div class="profile-icon">
@@ -141,15 +143,148 @@
     <p>Turning ideas into digital solutions.</p>
 </header>
 
-<nav>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#hire">Hire Me</a>
+<nav><nav style="background:#111; padding:12px; text-align:right; position:sticky; top:0; z-index:1000;">
+
+    <button onclick="toggleMenu()"
+            style="background:#ff8c00;
+                   color:white;
+                   border:none;
+                   border-radius:6px;
+                   padding:8px 12px;
+                   font-size:24px;
+                   cursor:pointer;">
+        ☰
+    </button>
+
+    <div id="mobileMenu"
+         style="display:none; margin-top:10px;">
+
+        <a href="#home" onclick="closeMenu()"
+           style="display:block; color:white; padding:10px; text-decoration:none;">
+            🏠 Home
+        </a>
+
+        <a href="#about" onclick="closeMenu()"
+           style="display:block; color:white; padding:10px; text-decoration:none;">
+            👤 About
+        </a>
+
+        <a href="#skills" onclick="closeMenu()"
+           style="display:block; color:white; padding:10px; text-decoration:none;">
+            🚀 Skills
+        </a>
+
+        <a href="#projects" onclick="closeMenu()"
+           style="display:block; color:white; padding:10px; text-decoration:none;">
+            💻 Projects
+        </a>
+
+        <a href="#contact" onclick="closeMenu()"
+           style="display:block; color:white; padding:10px; text-decoration:none;">
+            📞 Contact
+        </a>
+
+    </div>
 </nav>
 
-<section id="about">
-    <h2>About Me</h2>
+<script>
+function toggleMenu() {
+    var menu = document.getElementById("mobileMenu");
 
+    if (menu.style.display === "none") {
+        menu.style.display = "block";
+    } else {
+        menu.style.display = "none";
+    }
+}
+
+function closeMenu() {
+    document.getElementById("mobileMenu").style.display = "none";
+}
+</script>
+  
+<section id="home">
+<section id="home"
+
+<section id="about">
+  <section id="about">
+    <h2>About Me</h2>
+<section style="text-align:center; margin:60px auto; max-width:700px; padding:30px;">
+
+    <h2 style="font-size:30px; color:#ff8c00;">
+        🚀 My Skills & Progress
+    </h2>
+
+    <p>HTML — 80%</p>
+    <div style="background:#ddd; border-radius:20px; overflow:hidden;">
+        <div style="width:80%; background:#ff8c00; color:white; padding:10px;
+                    border-radius:20px; animation: progress1 2s ease-out;">
+            80%
+        </div>
+    </div>
+
+    <p>Python — 65%</p>
+    <div style="background:#ddd; border-radius:20px; overflow:hidden;">
+        <div style="width:65%; background:#ff8c00; color:white; padding:10px;
+                    border-radius:20px; animation: progress2 2s ease-out;">
+            65%
+        </div>
+    </div>
+
+    <p>JavaScript — 50%</p>
+    <div style="background:#ddd; border-radius:20px; overflow:hidden;">
+        <div style="width:50%; background:#ff8c00; color:white; padding:10px;
+                    border-radius:20px; animation: progress3 2s ease-out;">
+            50%
+        </div>
+    </div>
+
+    <p>AI & Chatbot Development — 40%</p>
+    <div style="background:#ddd; border-radius:20px; overflow:hidden;">
+        <div style="width:40%; background:#ff8c00; color:white; padding:10px;
+                    border-radius:20px; animation: progress4 2s ease-out;">
+            40%
+        </div>
+    </div>
+
+</section>
+
+<style>
+@keyframes progress1 {
+    from { width:0; }
+    to { width:80%; }
+}
+
+@keyframes progress2 {
+    from { width:0; }
+    to { width:65%; }
+}
+
+@keyframes progress3 {
+    from { width:0; }
+    to { width:50%; }
+}
+
+@keyframes progress4 {
+    from { width:0; }
+    to { width:40%; }
+}
+
+section {
+    animation: appear 1.5s ease-out;
+}
+
+@keyframes appear {
+    from {
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to {
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+</style>
     <p>
         I am passionate about Artificial Intelligence,
         chatbot development and modern web design.
@@ -162,6 +297,7 @@
 </section>
 
 <section id="services">
+  
     <h2>My Services</h2>
 
     <div class="service">
@@ -196,6 +332,19 @@
 </a>
         Hire Me
     </a>
+    <br><br>
+
+<a href="https://wa.me/25679376"
+   style="display:inline-block;
+          background:#25D366;
+          color:white;
+          padding:14px 24px;
+          border-radius:30px;
+          text-decoration:none;
+          font-weight:bold;
+          font-size:16px;">
+    💬 Chat with me on WhatsApp
+</a>
 </section>
 
 <footer>
