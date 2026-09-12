@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard — WATCHIT</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-wrap">
+    <a href="../index.html" class="brand"><span class="brand-name">WATCH<span class="accent">IT</span></span></a>
+    <span class="nav-link" style="font-weight:600;">Admin Dashboard</span>
+    <div class="nav-actions">
+      <span class="admin-email" id="adminEmail"></span>
+      <button class="btn btn-outline btn-small" id="logoutBtn">Log out</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="dashboard-header">
+    <div>
+      <h2 style="margin-bottom:0;">Overview</h2>
+      <p class="section-lead" style="margin:0;">A snapshot of your catalog.</p>
+    </div>
+  </div>
+
+  <div class="stat-grid">
+    <div class="stat-card"><div class="stat-value" id="statMovies">0</div><div class="stat-label">Total movies</div></div>
+    <div class="stat-card"><div class="stat-value" id="statSongs">0</div><div class="stat-label">Total songs</div></div>
+    <div class="stat-card"><div class="stat-value" id="statCategories">0</div><div class="stat-label">Total categories</div></div>
+    <div class="stat-card"><div class="stat-value" id="statFeatured">0</div><div class="stat-label">Featured items</div></div>
+  </div>
+
+  <div class="tab-bar">
+    <button class="tab-btn active" data-tab="tabMovies">Movies</button>
+    <button class="tab-btn" data-tab="tabSongs">Music</button>
+    <button class="tab-btn" data-tab="tabCategories">Categories</button>
+  </div>
+
+  <!-- ===================== MOVIES TAB ===================== -->
+  <section class="tab-panel active" id="tabMovies">
+    <div class="admin-layout">
+      <form class="admin-form" id="movieForm">
+        <h3 id="movieFormTitle">Add movie</h3>
+
+        <div class="form-field">
+          <label for="movieTitle">Title *</label>
+          <input type="text" id="movieTitle" required>
+        </div>
+        <div class="form-field">
+          <label for="movieDescription">Description</label>
+          <textarea id="movieDescription" rows="3"></textarea>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="movieCategorySelect">Genre</label>
+            <select id="movieCategorySelect"></select>
+          </div>
+          <div class="form-field">
+            <label for="movieYear">Release year</label>
+            <input type="number" id="movieYear" min="1900" max="2100">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="movieDuration">Duration (e.g. 2h 15m)</label>
+            <input type="text" id="movieDuration">
+          </div>
+          <div class="form-field">
+            <label class="form-checkbox" style="margin-top: 30px;">
+              <input type="checkbox" id="movieFeatured"> Featured on homepage
+            </label>
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="moviePoster">Poster / thumbnail URL (https://)</label>
+          <input type="url" id="moviePoster" placeholder="https://example.com/poster.jpg">
+        </div>
+        <div class="form-field">
+          <label for="movieSource">Movie source URL (https://)</label>
+          <input type="url" id="movieSource" placeholder="https://your-legal-source.com/movie">
+        </div>
+        <div class="form-field">
+          <label for="movieTrailer">Trailer URL (YouTube, Vimeo, or direct video)</label>
+          <input type="url" id="movieTrailer" placeholder="https://youtube.com/watch?v=...">
+        </div>
+
+        <p class="form-error" id="movieFormError"></p>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">Save movie</button>
+          <button type="button" class="btn btn-outline" id="movieCancelEdit">Cancel</button>
+        </div>
+      </form>
+
+      <div class="admin-table-wrap">
+        <div class="table-toolbar">
+          <input type="text" id="movieSearch" placeholder="Search movies by title...">
+        </div>
+        <table>
+          <thead><tr><th>Title</th><th>Genre</th><th>Year</th><th>Featured</th><th>Actions</th></tr></thead>
+          <tbody id="moviesTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SONGS TAB ===================== -->
+  <section class="tab-panel" id="tabSongs">
+    <div class="admin-layout">
+      <form class="admin-form" id="songForm">
+        <h3 id="songFormTitle">Add song</h3>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="songTitle">Title *</label>
+            <input type="text" id="songTitle" required>
+          </div>
+          <div class="form-field">
+            <label for="songArtist">Artist</label>
+            <input type="text" id="songArtist">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="songAlbum">Album</label>
+            <input type="text" id="songAlbum">
+          </div>
+          <div class="form-field">
+            <label for="songCategorySelect">Genre</label>
+            <select id="songCategorySelect"></select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="songYear">Release year</label>
+            <input type="number" id="songYear" min="1900" max="2100">
+          </div>
+          <div class="form-field">
+            <label class="form-checkbox" style="margin-top: 30px;">
+              <input type="checkbox" id="songFeatured"> Featured on homepage
+            </label>
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="songCover">Cover image URL (https://)</label>
+          <input type="url" id="songCover" placeholder="https://example.com/cover.jpg">
+        </div>
+        <div class="form-field">
+          <label for="songAudio">Audio source URL (https://, direct .mp3/.wav works best) *</label>
+          <input type="url" id="songAudio" required placeholder="https://your-legal-source.com/song.mp3">
+        </div>
+        <div class="form-field">
+          <label for="songDescription">Description</label>
+          <textarea id="songDescription" rows="2"></textarea>
+        </div>
+
+        <p class="form-error" id="songFormError"></p>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">Save song</button>
+          <button type="button" class="btn btn-outline" id="songCancelEdit">Cancel</button>
+        </div>
+      </form>
+
+      <div class="admin-table-wrap">
+        <div class="table-toolbar">
+          <input type="text" id="songSearch" placeholder="Search songs by title or artist...">
+        </div>
+        <table>
+          <thead><tr><th>Title</th><th>Artist</th><th>Genre</th><th>Featured</th><th>Actions</th></tr></thead>
+          <tbody id="songsTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CATEGORIES TAB ===================== -->
+  <section class="tab-panel" id="tabCategories">
+    <div class="admin-layout">
+      <form class="admin-form" id="categoryForm">
+        <h3 id="categoryFormTitle">Add category</h3>
+        <div class="form-field">
+          <label for="categoryName">Name *</label>
+          <input type="text" id="categoryName" required placeholder="e.g. Thriller">
+        </div>
+        <div class="form-field">
+          <label for="categoryType">Applies to</label>
+          <select id="categoryType">
+            <option value="movie">Movies</option>
+            <option value="music">Music</option>
+          </select>
+        </div>
+        <p class="form-error" id="categoryFormError"></p>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">Save category</button>
+        </div>
+      </form>
+
+      <div class="admin-table-wrap">
+        <table>
+          <thead><tr><th>Name</th><th>Type</th><th>Actions</th></tr></thead>
+          <tbody id="categoriesTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../js/config.js"></script>
+<script src="../js/supabase-client.js"></script>
+<script src="../js/utils.js"></script>
+<script src="../js/data.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/admin-dashboard.js"></script>
+</body>
+</html>

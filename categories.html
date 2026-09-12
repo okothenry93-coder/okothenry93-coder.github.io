@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Categories — WATCHIT</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-wrap">
+    <a href="index.html" class="brand"><span class="brand-name">WATCH<span class="accent">IT</span></span></a>
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="movies.html" class="nav-link">Movies</a>
+      <a href="music.html" class="nav-link">Music</a>
+      <a href="categories.html" class="nav-link">Categories</a>
+      <a href="about.html" class="nav-link">About</a>
+    </nav>
+    <form class="header-search" id="headerSearchForm">
+      <input type="search" id="headerSearchInput" placeholder="Search WATCHIT...">
+    </form>
+    <div class="nav-actions">
+      <a href="admin/login.html" class="btn btn-outline btn-small">Admin</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="section-inner">
+    <div class="section-head">
+      <h2>Categories</h2>
+      <p class="section-lead">Jump straight to a genre. Categories are managed from the admin dashboard.</p>
+    </div>
+
+    <h3 style="font-family: var(--font-body); font-size: 1.1rem; margin-bottom: 14px;">Movie genres</h3>
+    <div class="category-grid" id="movieCategoryList">
+      <p class="empty-state">Loading...</p>
+    </div>
+
+    <h3 style="font-family: var(--font-body); font-size: 1.1rem; margin: 32px 0 14px;">Music genres</h3>
+    <div class="category-grid" id="musicCategoryList">
+      <p class="empty-state">Loading...</p>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span class="brand-name" style="font-size:1.2rem;">WATCH<span class="accent">IT</span></span>
+    <nav class="footer-nav">
+      <a href="index.html">Home</a>
+      <a href="movies.html">Movies</a>
+      <a href="music.html">Music</a>
+      <a href="categories.html">Categories</a>
+      <a href="about.html">About</a>
+    </nav>
+    <p class="footer-copy">&copy; <span id="year"></span> WATCHIT. All content managed by the site administrator.</p>
+  </div>
+</footer>
+
+<nav class="bottom-nav">
+  <a href="index.html"><span class="icon">&#127968;</span>Home</a>
+  <a href="movies.html"><span class="icon">&#127916;</span>Movies</a>
+  <a href="music.html"><span class="icon">&#127925;</span>Music</a>
+  <a href="search.html"><span class="icon">&#128269;</span>Search</a>
+  <a href="admin/login.html"><span class="icon">&#128295;</span>Admin</a>
+</nav>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/config.js"></script>
+<script src="js/supabase-client.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/data.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/categories-page.js"></script>
+</body>
+</html>

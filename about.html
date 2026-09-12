@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — WATCHIT</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-wrap">
+    <a href="index.html" class="brand"><span class="brand-name">WATCH<span class="accent">IT</span></span></a>
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="movies.html" class="nav-link">Movies</a>
+      <a href="music.html" class="nav-link">Music</a>
+      <a href="categories.html" class="nav-link">Categories</a>
+      <a href="about.html" class="nav-link">About</a>
+    </nav>
+    <form class="header-search" id="headerSearchForm">
+      <input type="search" id="headerSearchInput" placeholder="Search WATCHIT...">
+    </form>
+    <div class="nav-actions">
+      <a href="admin/login.html" class="btn btn-outline btn-small">Admin</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="section-inner">
+    <div class="section-head">
+      <h2>About WATCHIT</h2>
+      <p class="section-lead">A hand-curated movie and music catalog, built and maintained by one administrator.</p>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-text">
+        <p>
+          WATCHIT is a static front-end hosted on GitHub Pages, connected to a Supabase
+          database for its movie and music catalog. There's no recommendation engine and
+          no crowd-sourced content — every title, poster, and audio link is added by hand
+          through the admin dashboard.
+        </p>
+        <p>
+          Every movie and song points to an external, administrator-provided link rather
+          than a file stored in this repository. WATCHIT never downloads, copies, or
+          re-hosts media — it only links out to sources the administrator has chosen to
+          display.
+        </p>
+      </div>
+      <ul class="about-facts">
+        <li><span class="fact-num">1</span><span class="fact-label">administrator, one catalog</span></li>
+        <li><span class="fact-num">0</span><span class="fact-label">media files stored in this repo</span></li>
+        <li><span class="fact-num">100%</span><span class="fact-label">external, admin-approved sources</span></li>
+      </ul>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span class="brand-name" style="font-size:1.2rem;">WATCH<span class="accent">IT</span></span>
+    <nav class="footer-nav">
+      <a href="index.html">Home</a>
+      <a href="movies.html">Movies</a>
+      <a href="music.html">Music</a>
+      <a href="categories.html">Categories</a>
+      <a href="about.html">About</a>
+    </nav>
+    <p class="footer-copy">&copy; <span id="year"></span> WATCHIT. All content managed by the site administrator.</p>
+  </div>
+</footer>
+
+<nav class="bottom-nav">
+  <a href="index.html"><span class="icon">&#127968;</span>Home</a>
+  <a href="movies.html"><span class="icon">&#127916;</span>Movies</a>
+  <a href="music.html"><span class="icon">&#127925;</span>Music</a>
+  <a href="search.html"><span class="icon">&#128269;</span>Search</a>
+  <a href="admin/login.html"><span class="icon">&#128295;</span>Admin</a>
+</nav>
+
+<script src="js/nav.js"></script>
+</body>
+</html>

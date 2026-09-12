@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Music — WATCHIT</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-wrap">
+    <a href="index.html" class="brand"><span class="brand-name">WATCH<span class="accent">IT</span></span></a>
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="movies.html" class="nav-link">Movies</a>
+      <a href="music.html" class="nav-link">Music</a>
+      <a href="categories.html" class="nav-link">Categories</a>
+      <a href="about.html" class="nav-link">About</a>
+    </nav>
+    <form class="header-search" id="headerSearchForm">
+      <input type="search" id="headerSearchInput" placeholder="Search WATCHIT...">
+    </form>
+    <div class="nav-actions">
+      <a href="admin/login.html" class="btn btn-outline btn-small">Admin</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="section-inner" style="padding-bottom: 0;">
+    <div class="section-head">
+      <h2>Music</h2>
+      <p class="section-lead">Tap any cover to start playing. Use the player bar to skip, pause, or adjust volume.</p>
+    </div>
+  </div>
+
+  <div class="filter-bar">
+    <input type="text" id="pageSearchInput" placeholder="Search by title or artist...">
+    <select id="genreFilter"><option value="">All genres</option></select>
+    <select id="yearFilter"><option value="">All years</option></select>
+  </div>
+
+  <div class="section-inner" style="padding-top: 0;">
+    <div class="card-grid" id="songsGrid">
+      <p class="empty-state">Loading songs...</p>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span class="brand-name" style="font-size:1.2rem;">WATCH<span class="accent">IT</span></span>
+    <nav class="footer-nav">
+      <a href="index.html">Home</a>
+      <a href="movies.html">Movies</a>
+      <a href="music.html">Music</a>
+      <a href="categories.html">Categories</a>
+      <a href="about.html">About</a>
+    </nav>
+    <p class="footer-copy">&copy; <span id="year"></span> WATCHIT. All content managed by the site administrator.</p>
+  </div>
+</footer>
+
+<div class="player-bar" id="playerBar">
+  <img class="player-cover" id="playerCover" alt="">
+  <div class="player-meta">
+    <p class="player-title" id="playerTitle"></p>
+    <p class="player-artist" id="playerArtist"></p>
+  </div>
+  <div class="player-controls">
+    <button id="playerPrevBtn" aria-label="Previous">&#9198;</button>
+    <button id="playerPlayBtn" class="play-btn" aria-label="Play or pause">&#9654;</button>
+    <button id="playerNextBtn" aria-label="Next">&#9197;</button>
+  </div>
+  <div class="player-progress-wrap">
+    <span class="player-time" id="playerCurrentTime">0:00</span>
+    <div class="player-progress" id="playerProgress"><div class="player-progress-fill" id="playerProgressFill"></div></div>
+    <span class="player-time" id="playerDuration">0:00</span>
+  </div>
+  <div class="player-volume"><input type="range" id="playerVolume" min="0" max="1" step="0.05" value="1"></div>
+</div>
+
+<nav class="bottom-nav">
+  <a href="index.html"><span class="icon">&#127968;</span>Home</a>
+  <a href="movies.html"><span class="icon">&#127916;</span>Movies</a>
+  <a href="music.html"><span class="icon">&#127925;</span>Music</a>
+  <a href="search.html"><span class="icon">&#128269;</span>Search</a>
+  <a href="admin/login.html"><span class="icon">&#128295;</span>Admin</a>
+</nav>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/config.js"></script>
+<script src="js/supabase-client.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/data.js"></script>
+<script src="js/cards.js"></script>
+<script src="js/modal.js"></script>
+<script src="js/player.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/music-page.js"></script>
+</body>
+</html>
